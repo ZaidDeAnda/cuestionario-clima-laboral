@@ -123,7 +123,7 @@ if check_password():
         form_dict["igualdad_1"] = st.select_slider("", ["Siempre", "A veces", "Nunca"], key="igualdad_1", value="A veces", label_visibility="collapsed")
 
         st.write("¿Puedes acercarte a te jefa/e inmediata/o para hablar sobre cuestiones relacionadas con horarios que te estén afectando?")
-        form_dict["inclusion_2"] = st.select_slider("", ["Siempre", "A veces", "Nunca"], key="inclusion_2", value="A veces", label_visibility="collapsed")
+        form_dict["igualdad_2"] = st.select_slider("", ["Siempre", "A veces", "Nunca"], key="igualdad_2", value="A veces", label_visibility="collapsed")
 
         st.write("¿Actualmente consideras que has sido sujeto de algún “castigo” como: aislamiento de sus compañeras/os, cambio de lugar repentinamente, falta de instrucciones, menosprecio del esfuerzo o propuestas, imposición de tareas sin los medios para realizarlas, aumento de jornada laboral,  etc.?")
         form_dict["igualdad_3"] = st.select_slider("", ["Siempre", "A veces", "Nunca"], key="igualdad_3", value="A veces", label_visibility="collapsed")
