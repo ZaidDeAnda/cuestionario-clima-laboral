@@ -1,15 +1,20 @@
 import pandas as pd
 import streamlit as st
+from utils.config import Config
+from utils.database import get_mongo_client
 
 def check_password():
-    user_dict = {
-        "password" : "contraseña"
-    }
+    config = Config()
+    client = get_mongo_client(config)
+    collection = client['ambiente_laboral']['usuarios']
     """Returns `True` if the user had a correct password."""
 
     def password_entered():
         """Checks whether a password entered by the user is correct."""
-        if st.session_state["password"] == user_dict["password"]:
+        query = {"password":st.session_state["password"]}
+        doc = collection.find_one(query)
+        if doc:
+            st.session_state["user"] = doc["user"]
             st.session_state["password_correct"] = True
             del st.session_state["password"]
         else:

@@ -14,7 +14,7 @@ if check_password():
 
     st.write("Favor de responder a la siguiente encuesta moviendo el cursor/slider a la posición que mejor refleje tu opinión al respecto.")
 
-    form_dict = {}
+    form_dict = {"user":st.session_state["user"]}
 
     with st.form("formulario"):
 
